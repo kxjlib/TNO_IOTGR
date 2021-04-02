@@ -162,6 +162,64 @@ country_event = {
 	}
 }
 
+# Kaukasien Land Captured
+country_event = {
+	id = TNO_germany.3
+	title = TNO_germany.3.t
+	desc = TNO_germany.3.d
+	hidden = yes
+
+	trigger = {
+		tag = GER
+		GER = {
+			owns_state = 234
+			owns_state = 235
+			owns_state = 232
+			owns_state = 233
+			owns_state = 231
+			owns_state = 229
+			owns_state = 230
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			# Grant Kaukasia
+			every_state = {
+				limit = {
+					OR = {
+						state = 234
+						state = 235
+						state = 232
+						state = 233
+						state = 231
+						state = 229
+						state = 230
+					}
+					is_owned_by = GER
+				}
+				KAU = {
+					PREV = { add_core_of = KAU }
+					PREV = { remove_core_of = SOV }
+					transfer_state = PREV
+				}
+				GER = {
+					puppet = KAU
+					set_autonomy = { target = KAU autonomy_state = autonomy_integrated_puppet }
+				}
+				KAU = {
+					set_popularities = {
+						democratic = 0
+						fascism = 100
+						communism = 0
+						neutrality = 0
+					}
+				}
+			}
+		}
+	}
+}
+
 
 add_namespace = germany
 # Austrian Anschluss Completed

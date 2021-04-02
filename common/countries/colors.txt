@@ -1,12 +1,13 @@
 #reload countrycolors
 
 MCW = {
-	color = rgb { 144 33 42 }
+	color = rgb { 94 57 52 }
 	color_ui = rgb { 65 38 41 }
 }
 
 KAU = {
-	color = rgb {  }
+	color = rgb { 94 57 85 }
+	color_ui = rgb {65 38 65}
 }
 
 GER = {
