@@ -1,0 +1,28 @@
+on_actions = {
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					tag = SOV
+					FROM = {
+						tag = GER
+					}
+				}
+				
+				GER = { country_event = TNO_germany.1 }
+				SOV = { load_oob = "" }
+			}
+			else_if = {
+				limit = {
+					tag = POL
+					FROM = {
+						tag = GER
+					}
+				}
+				
+				GER = { country_event = TNO_germany.2 }
+				POL = { load_oob = "" }
+			}
+		}
+	}
+}
