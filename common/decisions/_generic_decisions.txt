@@ -10,6 +10,15 @@ political_actions = {
 		fire_only_once = yes
 		complete_effect = {
 			hidden_effect = {
+				134 = { remove_core_of = IRE }
+				135 = { remove_core_of = IRE }
+				113 = { remove_core_of = IRE }
+				ENG = {
+					transfer_state = 113
+					transfer_state = 135
+					transfer_state = 134
+				}
+			
 				every_state = {
 					limit = {
 						OR = {
@@ -76,6 +85,7 @@ political_actions = {
 				BRA = {
 					load_oob = ""
 					set_cosmetic_tag = ZZZ
+					add_ideas = annexed_random_stuff
 					
 					set_popularities = {
 						democratic = 0
