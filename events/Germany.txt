@@ -263,7 +263,7 @@ country_event = {
 	immediate = {
 		GER = { white_peace = POL }
 	
-		POL = { set_cosmetic_tag = BLR_reichskommissariat }
+		POL = { set_cosmetic_tag = POL_generalgouvernment }
 		every_state = {
 			limit = {
 				OR = {
