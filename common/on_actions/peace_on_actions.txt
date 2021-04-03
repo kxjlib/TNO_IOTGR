@@ -1,27 +1,78 @@
 on_actions = {
 	on_capitulation = {
 		effect = {
+			# GERMANY CONQUERS SOVIET UNION
 			if = {
 				limit = {
 					tag = SOV
 					FROM = {
-						tag = GER
+						original_tag = GER
 					}
 				}
 				
 				GER = { country_event = TNO_germany.1 }
 				SOV = { load_oob = "" }
 			}
+			# GERMANY CONQUERS POLAND
 			else_if = {
 				limit = {
 					tag = POL
 					FROM = {
-						tag = GER
+						original_tag = GER
 					}
 				}
 				
 				GER = { country_event = TNO_germany.2 }
 				POL = { load_oob = "" }
+			}
+			# GERMANY CONQUERS DENMARK
+			else_if = {
+				limit = {
+					tag = DEN
+					FROM = {
+						original_tag = GER
+					}
+				}
+				809 = { add_core_of = GER }
+				GER = { transfer_state = 809 }
+				809 = { set_state_name = "Nordschleswig" }
+			}
+			# GERMANY CONQUERS BELGIUM
+			else_if = {
+				limit = {
+					tag = BEL
+					FROM = {
+						original_tag = GER
+					}
+				}
+				808 = { add_core_of = GER }
+				GER = { transfer_state = 808 }
+			}
+			# GERMANY CONQUERS FRANCE
+			else_if = {
+				limit = {
+					tag = FRA
+					FROM = {
+						original_tag = GER
+					}
+				}
+				28 = { add_core_of = GER }
+				GER = { transfer_state = 28 }
+				28 = { set_state_name = "Elsass-Lothringen" }
+				set_province_name = { id = 9503 name = "Strassburg" }
+				set_province_name = { id = 678 name = "Mulhausen" }
+			}
+			# GERMANY CONQUERS LUXEMBOURG
+			else_if = {
+				limit = {
+					tag = LUX
+					FROM = {
+						original_tag = GER
+					}
+				}
+				GER = { white_peace = LUX }
+				8 = { add_core_of = GER }
+				GER = { transfer_state = 8 }
 			}
 		}
 	}
