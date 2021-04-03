@@ -1,0 +1,14 @@
+state={
+	id=812
+	name="STATE_812"
+	history={
+		owner = SOV
+		add_core_of = SOV
+	}
+	provinces={
+		123 189 1336 6025 6162 6274 6288 7346 9283 9293 11124 11352 12203 
+	}
+	manpower=0
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

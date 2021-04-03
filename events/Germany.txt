@@ -135,6 +135,12 @@ country_event = {
 					state = 238
 					state = 237
 					state = 236
+					state = 817
+					state = 818
+					state = 819
+					state = 822
+					state = 823
+					state = 824
 				}
 			}
 			MCW = {
