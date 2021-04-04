@@ -1,0 +1,215 @@
+﻿focus_tree = {
+	id = TNO_Germany_Focus_Tree_1
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 100
+			tag = GER
+		}
+	}
+	
+	default = no
+
+	focus = {
+		id = TNO_GER_burning_books
+		icon = GFX_goal_generic_construction
+		x = 3
+		y = 0
+		cost = 4.3
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = education_crisis1
+		}
+	}
+
+	focus = {
+		id = TNO_GER_make_scapegoats_out_of_teachers
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_burning_books }
+		x = 0
+		y = 1
+		cost = 3.3
+		relative_position_id = TNO_GER_burning_books
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = education_crisis1
+				add_idea = education_crisis2
+			}
+		}
+	}
+
+	focus = {
+		id = TNO_GER_natsoc_education
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_make_scapegoats_out_of_teachers }
+		mutually_exclusive = { focus = TNO_GER_liberalise_education }
+		x = -1
+		y = 1
+		cost = 8.7
+		relative_position_id = TNO_GER_make_scapegoats_out_of_teachers
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = education_crisis2
+				add_idea = education_crisis_l
+			}
+		}
+	}
+
+	focus = {
+		id = TNO_GER_liberalise_education
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_make_scapegoats_out_of_teachers }
+		mutually_exclusive = { focus = TNO_GER_natsoc_education }
+		x = 1
+		y = 1
+		cost = 8.7
+		relative_position_id = TNO_GER_make_scapegoats_out_of_teachers
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = education_crisis2
+				add_idea = education_crisis_r
+			}
+		}
+	}
+
+	focus = {
+		id = TNO_GER_increase_school_hours
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_natsoc_education focus = TNO_GER_liberalise_education }
+		mutually_exclusive = { focus = TNO_GER_decrease_pressure }
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = TNO_GER_natsoc_education
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = { limit = { has_idea = education_crisis_l }
+				swap_ideas = {
+					remove_idea = education_crisis_l
+					add_idea = education_crisis_ll
+				}
+			}
+			if = { limit = { has_idea = education_crisis_r }
+				swap_ideas = {
+					remove_idea = education_crisis_r
+					add_idea = education_crisis_rl
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TNO_GER_decrease_pressure
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_natsoc_education focus = TNO_GER_liberalise_education }
+		mutually_exclusive = { focus = TNO_GER_increase_school_hours }
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = TNO_GER_liberalise_education
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = { limit = { has_idea = education_crisis_l }
+				swap_ideas = {
+					remove_idea = education_crisis_l
+					add_idea = education_crisis_lr
+				}
+			}
+			if = { limit = { has_idea = education_crisis_r }
+				swap_ideas = {
+					remove_idea = education_crisis_r
+					add_idea = education_crisis_rr
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = TNO_GER_learning_from_our_mistakes
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_increase_school_hours focus = TNO_GER_decrease_pressure }
+		x = -1
+		y = 1
+		cost = 8.6
+		relative_position_id = TNO_GER_decrease_pressure
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = { limit = { has_idea = education_crisis_ll } remove_ideas = education_crisis_ll }
+			if = { limit = { has_idea = education_crisis_lr } remove_ideas = education_crisis_lr }
+			if = { limit = { has_idea = education_crisis_rl } remove_ideas = education_crisis_rl }
+			if = { limit = { has_idea = education_crisis_rr } remove_ideas = education_crisis_rr }
+		}
+	}
+
+	focus = {
+		id = TNO_GER_underminding_versailles
+		icon = GFX_goal_generic_construction
+		x = 7
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = TNO_GER_deploy_the_troops
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = TNO_GER_underminding_versailles }
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = TNO_GER_underminding_versailles
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = TNO_GER_remilitarise_the_rhineland
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = TNO_GER_deploy_the_troops }
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = TNO_GER_deploy_the_troops
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+		}
+	}
+}

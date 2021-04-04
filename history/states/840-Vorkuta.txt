@@ -1,14 +1,24 @@
 state={
 	id=840
 	name="STATE_840"
+	resources={
+		oil = 23
+		aluminium = 12
+	}
 	history={
 		owner = SOV
 		add_core_of = SOV
+		buildings = {
+			infrastructure = 4
+			198 = { naval_base = 2 }
+		}
+		victory_points = { 11182 10 }
+		victory_points = { 9205 4 }
 	}
 	provinces={
 		198 6040 9205 10723 11119 11182 
 	}
-	manpower=0
+	manpower=141000
 	buildings_max_level_factor=1.000
 	state_category=rural
 }

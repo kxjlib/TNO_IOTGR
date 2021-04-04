@@ -5,11 +5,13 @@ state={
 	history={
 		owner = SOV
 		add_core_of = SOV
+		victory_points = { 11035 3 }
+		victory_points = { 9136 1 }
 	}
 	provinces={
 		23 196 3079 6112 6190 9133 9136 9210 11035 11075 11180 13240 13241 13242 13243 13244 
 	}
-	manpower=0
+	manpower=225000
 	buildings_max_level_factor=1.000
 	state_category=rural
 }

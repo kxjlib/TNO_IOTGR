@@ -2,14 +2,24 @@
 state={
 	id=814
 	name="STATE_814"
+	resources={
+		tungsten = 11
+		steel = 5
+		oil = 7
+	}
 	history={
 		owner = SOV
 		add_core_of = SOV
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = { 12187 3 }
+		victory_points = { 12527 7 }
 	}
 	provinces={
 		278 1754 4874 12187 12527 
 	}
-	manpower=0
+	manpower=265144
 	buildings_max_level_factor=1.000
 	state_category=rural
 }
