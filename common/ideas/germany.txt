@@ -1,6 +1,187 @@
 ideas = {
 
 	country = {
+	
+		increase_romania_autonomy1 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.05
+			}
+		}
+		
+		increase_romania_autonomy2 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.10
+			}
+		}
+		
+		increase_romania_autonomy3 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.15
+			}
+		}
+		
+		increase_romania_autonomy4 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.20
+			}
+		}
+		
+		increase_romania_autonomy5 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.25
+			}
+		}
+	
+		increase_hungary_autonomy1 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.05
+			}
+		}
+		
+		increase_hungary_autonomy2 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.10
+			}
+		}
+		
+		increase_hungary_autonomy3 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.15
+			}
+		}
+		
+		increase_hungary_autonomy4 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.20
+			}
+		}
+		
+		increase_hungary_autonomy5 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				political_power_gain = -0.25
+			}
+		}
+		
 		education_crisis1 = {
 			removal_cost = -1
 			

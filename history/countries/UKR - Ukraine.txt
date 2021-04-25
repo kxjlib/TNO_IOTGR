@@ -60,7 +60,13 @@ if = {
 	}
 }
 
-set_popularities = {	democratic = 20	fascism = 30	communism = 50
+set_popularities = {	democratic = 18	fascism = 12	communism = 70
+}
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
 }
 
 create_country_leader = {
@@ -75,7 +81,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Nikita Sergeyevich Khrushchev"
+	name = "Nikita Khrushchev"
 	desc = ""
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	expire = "1953.3.1"
@@ -84,28 +90,5 @@ create_country_leader = {
 		
 	}
 }
-
-create_country_leader = {
-	name = "Erich Koch"
-	desc = "POLITICS_ERICH_KOCH_DESC"
-	picture = "Portrait_Ukraine_Erich_Koch.dds"
-	expire = "1953.3.1"
-	ideology = nazism
-	traits = {
-		
-	}
-}
-
-#create_country_leader = {
-#	name = ""
-#	desc = ""
-#	picture = ""
-#	expire = "1953.3.1"
-#	ideology = oligarchism
-#	traits = {
-#		
-#	}
-#}
-
 
 

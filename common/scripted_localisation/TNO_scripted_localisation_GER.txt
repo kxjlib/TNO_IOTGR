@@ -1,0 +1,63 @@
+defined_text = {
+	name = TNO_GER_hun_level_alignment
+	text = {
+		trigger = {
+			NOT = { HUN = { has_government = fascism } }
+		}
+		localization_key = TNO_hun_unaligned
+	}
+	text = {
+		trigger = {
+			HUN = { has_government = fascism }
+			NOT = { HUN = { is_in_faction_with = GER } }
+			NOT = { HUN = { is_puppet_of = GER } }
+		}
+		localization_key = TNO_hun_aligned
+	}
+	text = {
+		trigger = {
+			HUN = { has_government = fascism }
+			HUN = { is_in_faction_with = GER }
+			NOT = { HUN = { is_puppet_of = GER } }
+		}
+		localization_key = TNO_hun_in_faction
+	}
+	text = {
+		trigger = {
+			HUN = { is_puppet_of = GER }
+		}
+		localization_key = TNO_hun_highly_aligned
+	}
+}
+
+defined_text = {
+	name = TNO_GER_rom_level_alignment
+	text = {
+		trigger = {
+			NOT = { ROM = { has_government = fascism } }
+		}
+		localization_key = TNO_rom_unaligned
+	}
+	text = {
+		trigger = {
+			ROM = { has_government = fascism }
+			NOT = { ROM = { is_in_faction_with = GER } }
+			NOT = { ROM = { is_puppet_of = GER } }
+		}
+		localization_key = TNO_rom_aligned
+	}
+	text = {
+		trigger = {
+			ROM = { has_government = fascism }
+			ROM = { is_in_faction_with = GER }
+			NOT = { ROM = { is_puppet_of = GER } }
+		}
+		localization_key = TNO_rom_in_faction
+	}
+	text = {
+		trigger = {
+			ROM = { is_puppet_of = GER }
+		}
+		localization_key = TNO_rom_highly_aligned
+	}
+}

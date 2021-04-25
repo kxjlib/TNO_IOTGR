@@ -1,0 +1,242 @@
+guiTypes = {
+	
+	# Germany main diplo screen
+	containerWindowType = {
+		name = "TNO_ger_europe_diplo"
+		position = { x = 0 y = 0 }	
+		size = { width = 750 height = 600 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		moveable = yes
+		
+		background = {
+			name = "Background_LargeWindow"		
+			quadTextureSprite ="GFX_scripted_gui_window_background_large"
+		}
+		buttonType = {
+			name = "close_button"
+			spriteType = "GFX_closebutton"
+			shortcut = "ESCAPE"
+		}
+		
+		iconType = {
+			name = "map_central_europe"
+			spriteType = "GFX_map_central_europe"
+			position = { x = 10 y = 48 }
+			scale = 0.971
+		}
+		
+		buttonType = {
+			name = "hungary_button"
+			spriteType = "GFX_map_hungary"
+			scale = 0.97
+			position = { x = 304 y = 311 }
+		}
+		buttonType = {
+			name = "romania_button"
+			spriteType = "GFX_map_romania"
+			scale = 0.97
+			position = { x = 434 y = 275 }
+		}
+	}
+	
+	# Hungary Diplo Menu
+	containerWindowType = {
+		name = "TNO_ger_hungary_diplo"
+		position = { x = 577 y = 0 }	
+		size = { width = 400 height = 600 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		
+		background = {
+			name = "Background_SmallWindow"		
+			quadTextureSprite ="GFX_scripted_gui_window_background_small"
+		}
+		
+		buttonType = {
+			name = "tno_ger_hun_close_button"
+			spriteType = "GFX_closebutton"
+			shortcut = "ESCAPE"
+		}
+		
+		instantTextboxType = {
+			name = "information"
+			position = { x = 10 y = 50 }
+			text = "TNO_ger_europe_diplo_hun_text"
+			format = center
+			alwaystransparent = yes
+			maxWidth = 380
+		}
+		
+		instantTextboxType = {
+			name = "spending_info"
+			position = { x = 39 y = 447 }
+			text = "SPENDING"
+			format = center
+			maxWidth = 70
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "spending_amount"
+			position = { x = 39 y = 467 }
+			text = "[?TNO_ger_spending_hungary] PP/D"
+			format = center
+			maxWidth = 70
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "hun_influence_value"
+			position = { x = 160 y = 447 }
+			text = "Influence: [?TNO_ger_hungary_influence]/100"
+			format = center
+			maxWidth = 100
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "tno_ger_hun_inc_spending"
+			spriteType = "GFX_closebutton"
+			position = { x = 60 y = 400 }
+		}
+		
+		buttonType = {
+			name = "tno_ger_hun_dec_spending"
+			spriteType = "GFX_closebutton"
+			position = { x = 60 y = 500 }
+		}
+		
+		buttonType = {
+			name = "tno_ger_hun_increase_influence"
+			spriteType = "GFX_closebutton"
+			position = { x = 300 y = 450 }
+		}
+		
+		instantTextboxType = {
+			name = "hun_influence_level"
+			position = { x = 50 y = 200 }
+			text = [ROOT.TNO_GER_hun_level_alignment]
+			format = center
+			font = "hoi_30header"
+			maxWidth = 300
+			alwaystransparent = yes
+		}
+	}
+	
+	# Romania Diplo Menu
+	containerWindowType = {
+		name = "TNO_ger_romania_diplo"
+		position = { x = 577 y = 0 }	
+		size = { width = 400 height = 600 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		
+		background = {
+			name = "Background_SmallWindow"		
+			quadTextureSprite ="GFX_scripted_gui_window_background_small"
+		}
+		
+		buttonType = {
+			name = "tno_ger_rom_close_button"
+			spriteType = "GFX_closebutton"
+			shortcut = "ESCAPE"
+		}
+		
+		instantTextboxType = {
+			name = "information"
+			position = { x = 10 y = 50 }
+			text = "TNO_ger_europe_diplo_rom_text"
+			format = center
+			alwaystransparent = yes
+			maxWidth = 380
+		}
+		
+		instantTextboxType = {
+			name = "spending_info"
+			position = { x = 39 y = 447 }
+			text = "SPENDING"
+			format = center
+			maxWidth = 70
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "spending_amount"
+			position = { x = 39 y = 467 }
+			text = "[?TNO_ger_spending_romania] PP/D"
+			format = center
+			maxWidth = 70
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "rom_influence_value"
+			position = { x = 160 y = 447 }
+			text = "Influence: [?TNO_ger_romania_influence]/100"
+			format = center
+			maxWidth = 100
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "tno_ger_rom_inc_spending"
+			spriteType = "GFX_closebutton"
+			position = { x = 60 y = 400 }
+		}
+		
+		buttonType = {
+			name = "tno_ger_rom_dec_spending"
+			spriteType = "GFX_closebutton"
+			position = { x = 60 y = 500 }
+		}
+		
+		buttonType = {
+			name = "tno_ger_rom_increase_influence"
+			spriteType = "GFX_closebutton"
+			position = { x = 300 y = 450 }
+		}
+		
+		instantTextboxType = {
+			name = "rom_influence_level"
+			position = { x = 50 y = 200 }
+			text = [ROOT.TNO_GER_rom_level_alignment]
+			format = center
+			font = "hoi_30header"
+			maxWidth = 300
+			alwaystransparent = yes
+		}
+	}
+	
+	# Button to open Diplo
+	containerWindowType = {
+		name = "TNO_ger_open_europe_diplo"
+		position = { x = -40 y = 9 }	
+		size = { width = 40 height = 40 }
+		orientation = upper_right
+		origo = upper_right
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		
+		
+		buttonType = {
+			name = "openclose_button"
+			spriteType = "GFX_GER_custom_diplomacy"
+		}
+
+	}
+}

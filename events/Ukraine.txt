@@ -1,0 +1,65 @@
+add_namespace = TNO_ukraine
+country_event = {
+	id = TNO_ukraine.1
+	title = TNO_ukraine.1.t
+	desc = TNO_ukraine.1.d
+	is_triggered_only = yes
+	
+	immediate = {
+		MAK = {
+			every_state = {
+				limit = {
+					is_core_of = UKR
+				}
+				MAK = {
+					PREV = { add_core_of = MAK }
+				}	
+			}
+		
+			transfer_state = 200
+			transfer_state = 196
+			transfer_state = 227
+			transfer_state = 226
+			transfer_state = 228
+			load_oob = "MAK_breakaway"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			
+			declare_war_on = {
+				target = UKR
+				type = annex_everything
+			}
+		}
+	}
+	
+	option = {
+		name = TNO_ukraine.1.a
+		MAK = { change_tag_from = UKR }
+	}
+	
+	option = {
+		name = TNO_ukraine.2.a
+	}
+}

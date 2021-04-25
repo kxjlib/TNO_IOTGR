@@ -1,6 +1,49 @@
 on_actions = {
 	on_capitulation = {
 		effect = {
+			# UKRAINE wins against MAKHNOVIA
+			if = {
+				limit = {
+					tag = MAK
+					FROM = {
+						original_tag = UKR
+					}
+				}
+				
+				UKR = { annex_country = { target = MAK transfer_troops = no } }
+				
+				every_state = {
+					limit = {
+						is_core_of = UKR
+					}
+					UKR = {
+						PREV = { remove_core_of = MAK }
+					}
+				}
+			}
+			
+			
+			# MAKHNOVIA wins against UKRAINE
+			if = {
+				limit = {
+					tag = UKR
+					FROM = {
+						original_tag = MAK
+					}
+				}
+				
+				MAK = { annex_country = { target = UKR transfer_troops = no } }
+				
+				every_state = {
+					limit = {
+						is_core_of = MAK
+					}
+					MAK = {
+						PREV = { remove_core_of = UKR }
+					}
+				}
+			}
+		
 			# GERMANY CONQUERS SOVIET UNION
 			if = {
 				limit = {
@@ -33,6 +76,7 @@ on_actions = {
 						original_tag = GER
 					}
 				}
+				FROM = { white_peace = DEN }
 				809 = { add_core_of = GER }
 				GER = { transfer_state = 809 }
 				809 = { set_state_name = "Nordschleswig" }
@@ -46,7 +90,6 @@ on_actions = {
 					}
 				}
 				808 = { add_core_of = GER }
-				GER = { transfer_state = 808 }
 			}
 			# GERMANY CONQUERS FRANCE
 			else_if = {
@@ -57,7 +100,6 @@ on_actions = {
 					}
 				}
 				28 = { add_core_of = GER }
-				GER = { transfer_state = 28 }
 				28 = { set_state_name = "Elsass-Lothringen" }
 				set_province_name = { id = 9503 name = "Strassburg" }
 				set_province_name = { id = 678 name = "Mulhausen" }
@@ -70,9 +112,7 @@ on_actions = {
 						original_tag = GER
 					}
 				}
-				GER = { white_peace = LUX }
 				8 = { add_core_of = GER }
-				GER = { transfer_state = 8 }
 			}
 		}
 	}

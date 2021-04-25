@@ -1,4 +1,6 @@
 ﻿l_english:
+ annexed_random_stuff:0 "Stop this nation from doing anything"
+
  education_crisis1:0 "The Education Crisis"
  education_crisis2:0 "The Education Crisis"
  education_crisis_l:0 "The Education Crisis"
@@ -7,3 +9,15 @@
  education_crisis_lr:0 "The Education Crisis"
  education_crisis_rr:0 "The Education Crisis"
  education_crisis_rl:0 "The Education Crisis"
+ 
+ increase_hungary_autonomy5:0 "Strengthen Ties With Hungary"
+ increase_hungary_autonomy4:0 "Strengthen Ties With Hungary"
+ increase_hungary_autonomy3:0 "Strengthen Ties With Hungary"
+ increase_hungary_autonomy2:0 "Strengthen Ties With Hungary"
+ increase_hungary_autonomy1:0 "Strengthen Ties With Hungary"
+ 
+ increase_romania_autonomy5:0 "Strengthen Ties With Romania"
+ increase_romania_autonomy4:0 "Strengthen Ties With Romania"
+ increase_romania_autonomy3:0 "Strengthen Ties With Romania"
+ increase_romania_autonomy2:0 "Strengthen Ties With Romania"
+ increase_romania_autonomy1:0 "Strengthen Ties With Romania"

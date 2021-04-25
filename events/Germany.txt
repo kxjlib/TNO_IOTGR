@@ -2,6 +2,28 @@
 # German Events
 ###########################
 
+add_namespace = TNO_germany_narrative
+country_event = {
+	id = TNO_germany_narrative.1
+	title = TNO_germany_narrative.1.t
+	desc = TNO_germany_narrative.1.d
+	is_triggered_only = yes
+	option = {
+		name = TNO_germany_narrative.1.a
+	}
+}
+
+country_event = {
+	id = TNO_germany_narrative.2
+	title = TNO_germany_narrative.2.t
+	desc = TNO_germany_narrative.2.d
+	is_triggered_only = yes
+	option = {
+		name = TNO_germany_narrative.2.a
+		add_manpower = 35783
+	}
+}
+
 add_namespace = TNO_germany
 
 country_event = {
@@ -9,33 +31,26 @@ country_event = {
 	title = TNO_germany.1.t
 	desc = TNO_germany.1.d
 	hidden = yes
-	is_triggered_only = yes
 
-	#fire_only_once = yes
+	fire_only_once = yes
 
-	#trigger = {
-		#	tag = GER
-		#	OR = {
-			#		AND = {
-				#			GER = {	controls_state = 219  } # Moscow
-				#			GER = {	controls_state = 217  } # Stalingrad
-				#			GER = {	controls_state = 229  } # Azerbaijan
-				#			GER = {	controls_state = 137  } # Sevastopol
-				#			GER = {	controls_state = 202  } # Kiev
-				#			GER = {	controls_state = 195  } # Leningrad
-				#			GER = {	controls_state = 214  } # Archangelsk
-				#			GER = {	controls_state = 351  } # Vologda
-				#			GER = {	controls_state = 252  } # Gorki
-				#			GER = {	controls_state = 255  } # Penza
-				#			GER = {	controls_state = 239  } # Saratov
-				#			GER = {	controls_state = 236  } # Astrakhan
-				#		}
-			#
-			#		SOV = {
-				#			surrender_progress > 0.9
-				#		}
-			#	}
-		#}
+	trigger = {
+		tag = GER
+		AND = {
+			GER = {	controls_state = 219  } # Moscow
+			GER = {	controls_state = 217  } # Stalingrad
+			GER = {	controls_state = 229  } # Azerbaijan
+			GER = {	controls_state = 137  } # Sevastopol
+			GER = {	controls_state = 202  } # Kiev
+			GER = {	controls_state = 195  } # Leningrad
+			GER = {	controls_state = 214  } # Archangelsk
+			GER = {	controls_state = 351  } # Vologda
+			GER = {	controls_state = 252  } # Gorki
+			GER = {	controls_state = 255  } # Penza
+			GER = {	controls_state = 239  } # Saratov
+			GER = {	controls_state = 236  } # Astrakhan
+		}
+	}
 
 	immediate = {
 		every_state = {
@@ -77,6 +92,16 @@ country_event = {
 					fascism = 100
 					communism = 0
 					neutrality = 0
+				}
+				create_country_leader = {
+					name = "Josias zu Waldeck und Pyrmont"
+					desc = "POLITICS_JOSIAS_DESC"
+					picture = "Portrait_Kaukasien_Josias.dds"
+					expire = "1965.1.1"
+					ideology = nazism
+					traits = {
+						
+					}
 				}
 			}
 		
@@ -170,6 +195,7 @@ country_event = {
 			UKR = {
 				PREV = { 
 					remove_core_of = UKR
+					remove_core_of = MAK
 				}
 			}
 		}
@@ -193,6 +219,7 @@ country_event = {
 					state = 221
 					state = 228
 					state = 227
+					state = 93
 				}
 			}
 			UKR = {
@@ -200,8 +227,33 @@ country_event = {
 				PREV = { 
 					remove_core_of = SOV
 					remove_core_of = POL
+					remove_core_of = MAK
 				}
 				transfer_state = PREV
+			}
+		}
+		
+		GER = {
+				puppet = UKR
+				set_autonomy = { target = UKR autonomy_state = autonomy_integrated_puppet }
+			}
+		UKR = {
+			set_popularities = {
+				democratic = 0
+				fascism = 100
+				communism = 0
+				neutrality = 0
+			}
+			set_cosmetic_tag = UKR_reichskommissariat
+			create_country_leader = {
+				name = "Erich Koch"
+				desc = "POLITICS_ERICH_KOCH_DESC"
+				picture = "Portrait_Ukraine_Erich_Koch.dds"
+				expire = "1953.3.1"
+				ideology = nazism
+				traits = {
+					
+				}
 			}
 		}
 		
@@ -226,6 +278,10 @@ country_event = {
 					state = 207
 					state = 241
 					state = 784
+					state = 94
+					state = 95
+					state = 96
+					state = 784
 				}
 			}
 			BLR = {
@@ -240,6 +296,31 @@ country_event = {
 				transfer_state = PREV
 			}
 		}
+			
+		GER = {
+				puppet = BLR
+				set_autonomy = { target = BLR autonomy_state = autonomy_integrated_puppet }
+		}
+		BLR = {
+			set_popularities = {
+				democratic = 0
+				fascism = 100
+				communism = 0
+				neutrality = 0
+			}
+			set_cosmetic_tag = BLR_reichskommissariat
+			create_country_leader = {
+				name = "Franz Walter Stahlecker"
+				desc = ""
+				picture = "Portrait_Ostland_Franz_Stahlecker.dds"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+					#
+				}
+			}
+		}
+		
 		
 		every_state = {
 			limit = {
@@ -249,6 +330,19 @@ country_event = {
 				}
 			}
 			ROM = {
+				PREV = { remove_core_of = SOV }
+				transfer_state = PREV
+			}
+		}
+		
+		every_state = {
+			limit = {
+				OR = {
+					state = 91
+					state = 89
+				}
+			}
+			POL = {
 				PREV = { remove_core_of = SOV }
 				transfer_state = PREV
 			}
@@ -299,65 +393,6 @@ country_event = {
 			}
 		}
 		
-		93 = {
-			UKR = {
-				PREV = { add_core_of = UKR }
-				PREV = { 
-					remove_core_of = SOV
-					remove_core_of = POL
-				}
-				transfer_state = PREV
-			}
-		}
-		
-		GER = {
-				puppet = UKR
-				set_autonomy = { target = UKR autonomy_state = autonomy_integrated_puppet }
-			}
-		UKR = {
-			set_popularities = {
-				democratic = 0
-				fascism = 100
-				communism = 0
-				neutrality = 0
-			}
-		}
-		
-		every_state = {
-			limit = {
-				OR = {
-					state = 94
-					state = 95
-					state = 96
-					state = 784
-				}
-			}
-			BLR = {
-				PREV = { add_core_of = BLR }
-				PREV = { 
-					remove_core_of = SOV
-					remove_core_of = EST
-					remove_core_of = LAT
-					remove_core_of = POL
-					remove_core_of = LIT
-				}
-				transfer_state = PREV
-			}
-		}
-				
-		GER = {
-				puppet = BLR
-				set_autonomy = { target = BLR autonomy_state = autonomy_integrated_puppet }
-		}
-		BLR = {
-			set_popularities = {
-				democratic = 0
-				fascism = 100
-				communism = 0
-				neutrality = 0
-			}
-		}
-		
 		GER = {
 				puppet = POL
 		}
@@ -369,6 +404,8 @@ country_event = {
 				neutrality = 0
 			}
 		}
+		89 = { add_core_of = POL remove_claim_by = POL }
+		91 = { add_core_of = POL remove_claim_by = POL }
 	}
 }
 

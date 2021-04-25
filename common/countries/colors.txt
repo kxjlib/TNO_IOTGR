@@ -1,5 +1,10 @@
 #reload countrycolors
 
+MAK = {
+	color = rgb { 50 50 50 }
+	color_ui = rgb { 50 50 50 }
+}
+
 MCW = {
 	color = rgb { 94 57 52 }
 	color_ui = rgb { 65 38 41 }
@@ -379,8 +384,8 @@ ICE = {
 }
 
 UKR = {
-	color = rgb { 40 72 85 }
-	color_ui = rgb { 89 120 135 }	
+	color = rgb { 0  80  230 }
+	color_ui = rgb { 0  80  230 }	
 }
 
 AZR = {
@@ -429,7 +434,7 @@ MNT = {
 }
 
 BLR = {
-	color = rgb { 80 10 18 }
+	color = rgb { 180 220 190 }
 	color_ui = rgb { 180 220 190 }
 }
 MAN = {

@@ -1,0 +1,108 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = increase_hungary_autonomy1
+				}
+				add_to_variable = {
+					var = TNO_ger_hungary_influence
+					value = 0.1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_hungary_autonomy2
+				}
+				add_to_variable = {
+					var = TNO_ger_hungary_influence
+					value = 0.2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_hungary_autonomy3
+				}
+				add_to_variable = {
+					var = TNO_ger_hungary_influence
+					value = 0.3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_hungary_autonomy4
+				}
+				add_to_variable = {
+					var = TNO_ger_hungary_influence
+					value = 0.4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_hungary_autonomy5
+				}
+				add_to_variable = {
+					var = TNO_ger_hungary_influence
+					value = 0.5
+				}
+			}
+			clamp_variable = {
+				var = TNO_ger_hungary_influence
+				min = 0
+				max = 100
+			}
+			
+			
+			if = {
+				limit = {
+					has_idea = increase_romania_autonomy1
+				}
+				add_to_variable = {
+					var = TNO_ger_romania_influence
+					value = 0.1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_romania_autonomy2
+				}
+				add_to_variable = {
+					var = TNO_ger_romania_influence
+					value = 0.2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_romania_autonomy3
+				}
+				add_to_variable = {
+					var = TNO_ger_romania_influence
+					value = 0.3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_romania_autonomy4
+				}
+				add_to_variable = {
+					var = TNO_ger_romania_influence
+					value = 0.4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = increase_romania_autonomy5
+				}
+				add_to_variable = {
+					var = TNO_ger_romania_influence
+					value = 0.5
+				}
+			}
+			clamp_variable = {
+				var = TNO_ger_romania_influence
+				min = 0
+				max = 100
+			}
+		}
+	}
+}

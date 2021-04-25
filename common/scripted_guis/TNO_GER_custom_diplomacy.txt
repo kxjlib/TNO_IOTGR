@@ -1,0 +1,508 @@
+scripted_gui = {
+  TNO_script_ger_europe_diplo = {
+    window_name = "TNO_ger_europe_diplo"
+    context_type = player_context
+	
+    visible = {
+		has_country_flag = TNO_ger_open_europe_diplo
+    }
+
+    effects = {
+		close_button_click = {
+			clr_country_flag = TNO_ger_open_europe_diplo
+		}
+		hungary_button_click = {
+			clr_country_flag = TNO_ger_open_romania_diplo
+			if = { limit = { has_country_flag = TNO_ger_open_hungary_diplo } clr_country_flag = TNO_ger_open_hungary_diplo }
+			else = { set_country_flag = TNO_ger_open_hungary_diplo }
+		}
+		romania_button_click = {
+			clr_country_flag = TNO_ger_open_hungary_diplo
+			if = { limit = { has_country_flag = TNO_ger_open_romania_diplo } clr_country_flag = TNO_ger_open_romania_diplo }
+			else = { set_country_flag = TNO_ger_open_romania_diplo }
+		}
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  
+  TNO_script_ger_hungary_diplo = {
+    window_name = "TNO_ger_hungary_diplo"
+    context_type = player_context
+    parent_window_name = TNO_ger_europe_diplo
+	
+    visible = {
+		has_country_flag = TNO_ger_open_hungary_diplo
+    }
+
+    effects = {
+		tno_ger_hun_close_button_click = {
+			clr_country_flag = TNO_ger_open_hungary_diplo
+		}
+		
+		tno_ger_hun_inc_spending_click = {
+			add_to_variable = {
+				var = TNO_ger_spending_hungary
+				value = 0.05
+			}
+			clamp_variable = {
+				var = TNO_ger_spending_hungary
+				min = 0
+				max = 0.25
+			}
+			
+			
+			if = {
+				limit = {
+					has_idea = increase_hungary_autonomy4
+				}
+				swap_ideas = {
+					add_idea = increase_hungary_autonomy5
+					remove_idea = increase_hungary_autonomy4
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_hungary_autonomy3
+				}
+				swap_ideas = {
+					add_idea = increase_hungary_autonomy4
+					remove_idea = increase_hungary_autonomy3
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_hungary_autonomy2
+				}
+				swap_ideas = {
+					add_idea = increase_hungary_autonomy3
+					remove_idea = increase_hungary_autonomy2
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_hungary_autonomy1
+				}
+				swap_ideas = {
+					add_idea = increase_hungary_autonomy2
+					remove_idea = increase_hungary_autonomy1
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_idea = increase_hungary_autonomy5
+							has_idea = increase_hungary_autonomy4
+							has_idea = increase_hungary_autonomy3
+							has_idea = increase_hungary_autonomy2
+							has_idea = increase_hungary_autonomy1
+						}
+					}
+				}
+				add_ideas = increase_hungary_autonomy1
+			}
+		}
+		
+		tno_ger_hun_dec_spending_click = {
+			add_to_variable = {
+				var = TNO_ger_spending_hungary
+				value = -0.05
+			}
+			clamp_variable = {
+				var = TNO_ger_spending_hungary
+				min = 0
+				max = 0.25
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_hungary_autonomy1
+				}
+				remove_ideas = increase_hungary_autonomy1
+			}
+			if = { 
+				limit = {
+					has_idea = increase_hungary_autonomy2
+				} 
+				swap_ideas = {
+					remove_idea = increase_hungary_autonomy2
+					add_idea = increase_hungary_autonomy1
+				}
+			}
+			if = { 
+				limit = {
+					has_idea = increase_hungary_autonomy3
+				} 
+				swap_ideas = {
+					remove_idea = increase_hungary_autonomy3
+					add_idea = increase_hungary_autonomy2
+				}
+			}
+			if = { 
+				limit = {
+					has_idea = increase_hungary_autonomy4
+				} 
+				swap_ideas = {
+					remove_idea = increase_hungary_autonomy4
+					add_idea = increase_hungary_autonomy3
+				}
+			}
+			if = { 
+				limit = {
+					has_idea = increase_hungary_autonomy5
+				} 
+				swap_ideas = {
+					remove_idea = increase_hungary_autonomy5
+					add_idea = increase_hungary_autonomy4
+				}
+			}
+		}
+		
+		tno_ger_hun_increase_influence_click = {
+			if = {
+				limit = {
+					check_variable = { TNO_ger_hungary_influence = 100 }
+				}
+				if = {
+					limit = {
+						HUN = { has_government = fascism }
+						HUN = { is_in_faction_with = GER }
+						NOT = { HUN = { is_puppet_of = GER } }
+					}
+					set_autonomy = { target = HUN autonomy_state = autonomy_reichsprotectorate }
+					clear_variable = TNO_ger_hungary_influence
+				}
+				
+				if = {
+					limit = {
+						HUN = { has_government = fascism }
+						NOT = { HUN = { is_in_faction_with = GER } }
+						NOT = { HUN = { is_puppet_of = GER } }
+					}
+					GER = { add_to_faction = HUN }
+					clear_variable = TNO_ger_hungary_influence
+				}
+				
+				if = {
+					limit = {
+						NOT = { HUN = { has_government = fascism } }
+					}
+					HUN = {
+						set_politics = {
+							ruling_party = fascism
+							elections_allowed = no
+							last_election = "1936.1.1"
+							election_frequency = 48
+						}
+					}
+					clear_variable = TNO_ger_hungary_influence
+				}
+			}
+		}
+		
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  
+  TNO_script_ger_romania_diplo = {
+    window_name = "TNO_ger_romania_diplo"
+    context_type = player_context
+    parent_window_name = TNO_ger_europe_diplo
+	
+    visible = {
+		has_country_flag = TNO_ger_open_romania_diplo
+    }
+
+    effects = {
+		tno_ger_rom_close_button_click = {
+			clr_country_flag = TNO_ger_open_romania_diplo
+		}
+		
+		tno_ger_rom_inc_spending_click = {
+			add_to_variable = {
+				var = TNO_ger_spending_romania
+				value = 0.05
+			}
+			clamp_variable = {
+				var = TNO_ger_spending_romania
+				min = 0
+				max = 0.25
+			}
+			
+			
+			if = {
+				limit = {
+					has_idea = increase_romania_autonomy4
+				}
+				swap_ideas = {
+					add_idea = increase_romania_autonomy5
+					remove_idea = increase_romania_autonomy4
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_romania_autonomy3
+				}
+				swap_ideas = {
+					add_idea = increase_romania_autonomy4
+					remove_idea = increase_romania_autonomy3
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_romania_autonomy2
+				}
+				swap_ideas = {
+					add_idea = increase_romania_autonomy3
+					remove_idea = increase_romania_autonomy2
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_romania_autonomy1
+				}
+				swap_ideas = {
+					add_idea = increase_romania_autonomy2
+					remove_idea = increase_romania_autonomy1
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_idea = increase_romania_autonomy5
+							has_idea = increase_romania_autonomy4
+							has_idea = increase_romania_autonomy3
+							has_idea = increase_romania_autonomy2
+							has_idea = increase_romania_autonomy1
+						}
+					}
+				}
+				add_ideas = increase_romania_autonomy1
+			}
+		}
+		
+		tno_ger_rom_dec_spending_click = {
+			add_to_variable = {
+				var = TNO_ger_spending_romania
+				value = -0.05
+			}
+			clamp_variable = {
+				var = TNO_ger_spending_romania
+				min = 0
+				max = 0.25
+			}
+			
+			if = {
+				limit = {
+					has_idea = increase_romania_autonomy1
+				}
+				remove_ideas = increase_romania_autonomy1
+			}
+			if = { 
+				limit = {
+					has_idea = increase_romania_autonomy2
+				} 
+				swap_ideas = {
+					remove_idea = increase_romania_autonomy2
+					add_idea = increase_romania_autonomy1
+				}
+			}
+			if = { 
+				limit = {
+					has_idea = increase_romania_autonomy3
+				} 
+				swap_ideas = {
+					remove_idea = increase_romania_autonomy3
+					add_idea = increase_romania_autonomy2
+				}
+			}
+			if = { 
+				limit = {
+					has_idea = increase_romania_autonomy4
+				} 
+				swap_ideas = {
+					remove_idea = increase_romania_autonomy4
+					add_idea = increase_romania_autonomy3
+				}
+			}
+			if = { 
+				limit = {
+					has_idea = increase_romania_autonomy5
+				} 
+				swap_ideas = {
+					remove_idea = increase_romania_autonomy5
+					add_idea = increase_romania_autonomy4
+				}
+			}
+		}
+		
+		tno_ger_rom_increase_influence_click = {
+			if = {
+				limit = {
+					check_variable = { TNO_ger_romania_influence = 100 }
+				}
+				if = {
+					limit = {
+						ROM = { has_government = fascism }
+						ROM = { is_in_faction_with = GER }
+						NOT = { ROM = { is_puppet_of = GER } }
+					}
+					set_autonomy = { target = ROM autonomy_state = autonomy_reichsprotectorate }
+					clear_variable = TNO_ger_romania_influence
+				}
+				
+				if = {
+					limit = {
+						ROM = { has_government = fascism }
+						NOT = { ROM = { is_in_faction_with = GER } }
+						NOT = { ROM = { is_puppet_of = GER } }
+					}
+					GER = { add_to_faction = ROM }
+					clear_variable = TNO_ger_romania_influence
+				}
+				
+				if = {
+					limit = {
+						NOT = { ROM = { has_government = fascism } }
+					}
+					ROM = {
+						set_politics = {
+							ruling_party = fascism
+							elections_allowed = no
+							last_election = "1936.1.1"
+							election_frequency = 48
+						}
+					}
+					clear_variable = TNO_ger_romania_influence
+				}
+			}
+		}
+		
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+  
+  TNO_script_ger_open_europe_diplo = {
+    window_name = "TNO_ger_open_europe_diplo"
+    context_type = player_context
+	parent_window_token = decision_tab
+	
+    visible = {
+		tag = GER
+		has_country_flag = TNO_ger_europe_diplo_unlocked
+    }
+
+    effects = {
+		openclose_button_click = {
+			if = { limit = { has_country_flag = TNO_ger_open_europe_diplo } clr_country_flag = TNO_ger_open_europe_diplo }
+			else = { set_country_flag = TNO_ger_open_europe_diplo }
+		}
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+    properties = {
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+}

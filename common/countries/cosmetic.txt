@@ -3,6 +3,12 @@ ZZZ = {
 	color_ui = rgb { 0 0 0 }
 }
 
+
+UKR_reichskommissariat = {
+	color = rgb { 40 72 85 }
+	color_ui = rgb { 89 120 135 }	
+}
+
 POL_generalgouvernment = {
 	color = rgb { 115 115 115 }
 	color_UI = rgb { 115 115 115 }
@@ -184,13 +190,8 @@ BEL_reichskommissariat = {
 }
 
 BLR_reichskommissariat = {
-	color = rgb { 115 115 115 }
-	color_ui = rgb { 122 145 93 }
-}
-
-UKR_reichskommissariat = {
-	color = rgb { 115 115 115 }
-	color_ui = rgb { 122 145 93 }
+	color = rgb { 80 10 18 }
+	color_ui = rgb { 180 220 190 }
 }
 
 SPR_civil_war = {

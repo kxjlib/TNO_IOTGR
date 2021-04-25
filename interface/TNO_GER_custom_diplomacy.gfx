@@ -1,0 +1,31 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_scripted_gui_window_background_large"
+		textureFile = "/gfx/interface/scripted_gui_graphics/GUI_window_large.dds"
+	}
+	spriteType = {
+		name = "GFX_closebutton"
+		textureFile = "/gfx/interface/closebutton.dds"
+	}
+	spriteType = {
+		name = "GFX_map_central_europe"
+		textureFile = "/gfx/interface/scripted_gui_graphics/1936_MAP_GER_HUN_ROM.dds"
+	}
+	spriteType = {
+		name = "GFX_map_hungary"
+		textureFile = "/gfx/interface/scripted_gui_graphics/1936_MAP_HUN.dds"
+	}
+	spriteType = {
+		name = "GFX_map_romania"
+		textureFile = "/gfx/interface/scripted_gui_graphics/1936_MAP_ROM.dds"
+	}
+	spriteType = {
+		name = "GFX_scripted_gui_window_background_small"
+		textureFile = "/gfx/interface/scripted_gui_graphics/GUI_window_small.dds"
+	}
+	spriteType = {
+		name = "GFX_GER_custom_diplomacy"
+		textureFile = "/gfx/interface/GER_custom_diplomacy.dds"
+	}
+}
+	

@@ -44,22 +44,22 @@ set_convoys = 20
 	}
 }
 
-create_country_leader = {
-	name = "Josias zu Waldeck und Pyrmont"
-	desc = "POLITICS_JOSIAS_DESC"
-	picture = "Portrait_Kaukasien_Josias.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		
-	}
-}
-
 set_politics = {
 	ruling_party = fascism
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Otto Kumm"
+	desc = "POLITICS_OTTO_KUMM_DESC"
+	picture = "Portrait_Kaukasien_Otto_Kumm.dds"
+	expire = "1953.3.1"
+	ideology = nazism
+	traits = {
+		
+	}
 }
 
 set_popularities = {
