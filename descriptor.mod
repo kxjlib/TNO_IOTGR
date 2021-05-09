@@ -17,4 +17,4 @@ tags={
 	"Translation"
 }
 name="The New Order: Infancy of the Greater Reich"
-supported_version="1.10.4"
+supported_version="1.10.5"
